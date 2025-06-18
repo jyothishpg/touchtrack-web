@@ -1,0 +1,217 @@
+.top-navbar-banner {
+	background: linear-gradient(115.14deg, #4C60FF -9.62%, #18226B 87.24%);
+
+	.navbar {
+		padding: 30px 24px;
+
+		.navbar-brand {
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.navbar-collapse {
+		flex-grow: 0;
+	}
+
+	.navbar-nav {
+		.nav-link {
+			color: rgba(255, 255, 255, 0.6);
+			font-weight: 300;
+			font-size: 16.11px;
+			line-height: 100%;
+			letter-spacing: 0%;
+			vertical-align: middle;
+			padding-right: 44px;
+
+		}
+	}
+}
+
+.login-btn {
+	border: 1px solid rgba(173, 140, 242, 1);
+	color: rgba(173, 140, 242, 1);
+	border-radius: 14px;
+	padding: 12px 50px;
+	text-decoration: none;
+}
+
+.main-banner {
+	.banner-image {
+		width: 100%;
+	}
+}
+
+.banner-wrapper {
+	position: relative;
+	animation: float 3s infinite alternate;
+	margin-top: 20px;
+}
+
+.car {
+	position: absolute;
+	bottom: 197px;
+	left: -255px;
+	width: 237px;
+	height: 140px;
+	background: url('../images/car.png') no-repeat center/contain;
+	animation: moveCar 5s forwards;
+}
+
+.phone {
+	position: absolute;
+	right: 142px;
+    top: -34px;
+	width: 300px;
+	height: 500px;
+	background: url('../images/mobile.png') no-repeat center/contain;
+	/* background: url('../images/mobile-1.png') no-repeat center/contain; */
+
+	animation: fadeIn 2s forwards .25s;
+	opacity: 0;
+}
+
+.pin {
+	position: absolute;
+	top: -36px;
+    right: 160px;
+    width: 136px;
+    height: 196px;
+	background: url('../images/pin.png') no-repeat center/contain;
+	transform: scale(0);
+	animation: popIn 1s forwards 2s;
+}
+
+.signal {
+	position: absolute;
+	top: -53px;
+    right: 82px;
+    width: 118px;
+    height: 129px;
+	background: url('../images/wifi.png') no-repeat center/contain;
+	transform: scale(0);
+	animation: popIn 1s forwards .1s;
+	mix-blend-mode: hard-light;
+}
+
+.card1 {
+	position: absolute;
+	width: 123px;
+	height: 167px;
+	top: 22px;
+	right: 354px;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 24px;
+	animation: fadeIn 1s forwards .5s;
+	background: url('../images/card1.png') no-repeat center/contain;
+	opacity: 0;
+}
+
+.card2 {
+	position: absolute;
+	width: 199px;
+	height: 211px;
+	bottom: 250px;
+	right: 50px;
+	color: #fff;
+	font-family: sans-serif;
+	font-size: 24px;
+	animation: fadeIn 1s forwards 1s;
+	background: url('../images/card2.png') no-repeat center/contain;
+	opacity: 0;
+}
+
+@keyframes float {
+	from {
+		transform: translateY(0);
+	}
+
+	to {
+		transform: translateY(-20px);
+	}
+}
+
+@keyframes moveCar {
+	to {
+		left: -155px;
+	}
+}
+
+@keyframes fadeIn {
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes popIn {
+	to {
+		transform: scale(1);
+	}
+}
+
+.btn-learn-more {
+	background: rgba(155, 195, 255, 0.23);
+	color: rgba(255, 255, 255, 1);
+	padding: 12px 50px;
+	border: none;
+	border-radius: 14px;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 100%;
+	letter-spacing: 0%;
+	i {
+		font-size: 14px;
+	}
+	&:hover {
+		background: #fff;
+		color: rgba(155, 195, 255, 1);
+	}
+}
+
+.banner-carousel h1 {
+		font-weight: 700;
+		font-size: 52px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		vertical-align: middle;
+		color: rgba(255, 255, 255, 1);
+}
+.banner-carousel h1 span {
+	color: rgba(99, 182, 255, 1);
+}
+.banner-carousel p {
+	color: rgba(255, 255, 255, .7);
+}
+.banner-carousel {
+	/* border: 1px solid rgba(99, 151, 255, 0.88); */
+	padding: 20px;
+
+	border: 1px solid transparent; /* Required to show border-image */
+	border-image-source: linear-gradient(105.28deg, rgba(99, 151, 255, 0.88) 13.08%, rgba(99, 156, 255, 0) 90.06%);
+	border-image-slice: 1;
+	border-radius: 30px;
+
+		.carousel-indicators [data-bs-target] {
+	   width: 10px;
+	   height: 10px;
+	   padding: 0;
+	   margin-right: 3px;
+	   margin-left: 3px;
+	   cursor: pointer;
+	   background-color: rgba(217, 217, 217, 0.3);
+	   border-radius: 100%;
+	   border: none;
+	   &.active {
+		width: 12px;
+		height: 12px;
+		background: rgba(133, 198, 255, 0.8);
+	   }
+   }
+   .carousel-indicators {
+	position: relative;
+	justify-content: start;
+	margin-left: 0;
+	margin-top: 20px;
+   }
+}
