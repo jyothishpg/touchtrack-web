@@ -525,6 +525,8 @@ input::placeholder {
 			border-radius: 10px !important;
 			padding: 12px;
 			width: 250px;
+			color:rgba(153, 153, 153, 1);
+			padding-right: 50px;
 		}
 		.input-group-text {
 			position: absolute;
@@ -532,6 +534,8 @@ input::placeholder {
 			top: 5px;
 			background: rgba(255, 255, 255, 1);
 			border-radius: 5px !important;
+			z-index: 9;
+			cursor: pointer;
 		}
 	}
   }
