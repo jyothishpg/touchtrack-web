@@ -27,7 +27,10 @@ body {
 			letter-spacing: 0%;
 			vertical-align: middle;
 			padding-right: 44px;
-
+			&.login-btn {
+				padding: 12px 50px;
+				display: none;
+			}
 		}
 	}
 }
@@ -59,7 +62,7 @@ body {
 	width: 237px;
 	height: 140px;
 	background: url('../images/car.png') no-repeat center/contain;
-	animation: moveCar 5s forwards;
+	animation: moveCar 5s infinite alternate;
 }
 
 .phone {
@@ -68,12 +71,32 @@ body {
 	top: -34px;
 	width: 300px;
 	height: 500px;
-	background: url('../images/mobile.png') no-repeat center/contain;
+	background: url('../images/mobile-new.png') no-repeat center/contain;
 	/* background: url('../images/mobile-1.png') no-repeat center/contain; */
 
 	animation: fadeIn 2s forwards .25s;
 	opacity: 0;
 }
+
+.phone-circle {
+	position: absolute;
+	right: 142px;
+	top: 380px;
+	width: 40px;
+	height: 40px;
+	background: url('../images/mobile-circle.png') no-repeat center/contain;
+	/* background: url('../images/mobile-1.png') no-repeat center/contain; */
+	animation: blinkAnim 2s infinite;
+	/* opacity: 0; */
+}
+@keyframes blinkAnim {
+	0%, 50%, 100% {
+	  opacity: 1;
+	}
+	25%, 75% {
+	  opacity: 0;
+	}
+  }
 
 .pin {
 	position: absolute;
@@ -83,7 +106,7 @@ body {
 	height: 196px;
 	background: url('../images/pin.png') no-repeat center/contain;
 	transform: scale(0);
-	animation: popIn 1s infinite 2s;
+	animation: popIn 4s infinite 2s;
 }
 
 .signal {
@@ -107,7 +130,7 @@ body {
 	color: #fff;
 	font-family: sans-serif;
 	font-size: 24px;
-	animation: fadeIn 1s forwards .5s;
+	animation: fadeIn 1s infinite alternate .5s;
 	background: url('../images/card1.png') no-repeat center/contain;
 	opacity: 0;
 }
@@ -121,7 +144,7 @@ body {
 	color: #fff;
 	font-family: sans-serif;
 	font-size: 24px;
-	animation: fadeIn 1s forwards 1s;
+	animation: fadeIn 1s infinite alternate 1s;
 	background: url('../images/card2.png') no-repeat center/contain;
 	opacity: 0;
 }
@@ -150,7 +173,7 @@ body {
 
 @keyframes popIn {
 	to {
-		transform: scale(1);
+		transform: scale(.75);
 	}
 }
 
@@ -287,6 +310,7 @@ body {
 			padding: 12px 50px;
 			border-radius: 14px;
 			border: none;
+			transition: all 1s ease-out;
 		}
 
 		.btn-info:hover {
@@ -433,7 +457,7 @@ body {
 
 .contact-us {
 	background-size: contain;
-	background: url(../images/contact.png) no-repeat;
+	background: url(../images/contact-line.png) no-repeat;
 	padding: 110px 0;
 
 	h5 {
@@ -638,11 +662,18 @@ input::-ms-input-placeholder {
 			height: 82px;
 			text-align: center;
 			padding-top: 26px;
-
+			transition: all 1s ease-out;
 			img {
 				width: 24px;
 			}
-
+			
+		}
+		.icon-wrap:hover {
+			border:1px solid  #fff;
+			background: #3847B0;
+			img {
+				filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(139deg) brightness(106%) contrast(101%);
+			}
 		}
 	}
 }
@@ -708,8 +739,8 @@ input::-ms-input-placeholder {
 			}
 			&.dubai {
 				position: absolute;
-				/* top: 150px; */
-				top: -100px;
+				top: 150px;
+				/* top: -100px; */
 				right: 420px;
 				&:after {
 					content: '';
@@ -725,8 +756,8 @@ input::-ms-input-placeholder {
 			}
 			&.kochi {
 				position: absolute;
-				/* top: 178px; */
-				top: -100px;
+				top: 178px;
+				/* top: -100px; */
                 right: 50px;
 				&:after {
 					content: '';
@@ -742,8 +773,8 @@ input::-ms-input-placeholder {
 			}
 			&.kollam {
 				position: absolute;
-				/* top: 313px; */
-				top: -100px;
+				top: 313px;
+				/* top: -100px; */
                 right: 50px;
 				&:after {
 					content: '';
@@ -764,7 +795,7 @@ input::-ms-input-placeholder {
 	}
 }
 
-.dubai {
+/* .dubai {
 	-webkit-animation: slideDubai 0.5s forwards;
 	-webkit-animation-delay: 2s;
 	animation: slideDubai 0.5s forwards;
@@ -794,4 +825,387 @@ input::-ms-input-placeholder {
 @keyframes slideKollam {
 	from { top: -100px; }       
 	to   { top: 313px; }    
+} */
+.contact-image {
+	position: relative;
+	.contact-mobile {
+		position: absolute;
+		width: 555px;
+		top: 200px;
+		img {
+			width: 100%;
+		}
+		.contact-cards {
+			position: absolute;
+			.card-2 {
+				width: 219px;
+				position: absolute;
+                left: -22px;
+                top: -50px;
+				z-index: 1;
+			}
+			.card-1 {
+				width: 253px;
+				position: absolute;
+				left: 40px;
+                top: -5px;
+				z-index: 2;
+			}
+		}
+		.contact-icons {
+			position: absolute;
+			width: 245px;            
+			left: 280px;
+            top: 170px;
+		}
+	}
 }
+@media (max-width: 1280px) {
+	.car {
+		position: absolute;
+		bottom: 16px;
+		left: -255px;
+		width: 195px;
+		height: 140px;
+		background: url(../images/car.png) no-repeat center / contain;
+		animation: moveCar 5s infinite alternate;
+	}
+	.card2 {
+		width: 155px;
+		height: 150px;
+		bottom: 34px;
+		right: 20px;
+	}
+	.phone {
+		right: 50px;
+	}
+	.card1 {
+		right: 254px;
+	}
+	.signal {
+		top: -11px;
+		right: 24px;
+		width: 118px;
+		height: 129px;
+	}
+	.pin {
+		top: 7px;
+		right: 104px;
+		width: 96px;
+		height: 161px;
+	}
+	.mobile-grapgh-image {
+		img {
+			width: 100%;
+		}
+	}
+	.contact-image {
+		.contact-mobile {
+			position: absolute;
+			width: 455px;
+			top: 200px;
+		}
+	}
+	.contact-image {
+		& .contact-mobile {
+			.contact-icons {
+				position: absolute;
+				width: 245px;
+				left: 215px;
+				top: 145px;
+				top: 135px;
+			}
+		}
+	}
+ }
+ @media (max-width: 999px) {
+	.login-btn {
+		display: none;
+	}
+	.top-navbar-banner {
+		& .navbar-nav {
+			& .nav-link {
+				&.login-btn {
+					display: inline-block;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+	.navbar-toggler {
+		.navbar-toggler-icon {
+			filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(139deg) brightness(106%) contrast(101%);
+		}
+	}
+	.navbar-toggler:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	.our-supports {
+		.support-card {
+			margin-bottom: 50px;
+			border: 1px solid #ededed;
+			padding: 50px;
+		}
+	}
+	.contact-image {
+        .contact-mobile {
+            position: static;
+            width: 455px;
+            top: 200px;
+			margin: 0 auto;
+        }
+    }
+	.map-wrapper {
+		width: 100% !important;
+		img {
+			width: 100%;
+		}
+	}
+	.footer {
+		& ul {
+			& li {
+				a {
+					display:block;
+					padding: 24px;
+				}
+			}
+		}
+	}
+	.mobile-grapgh-image {
+		margin-top: 15px;
+	}
+ }
+@media (max-width: 768px) {
+	.login-btn {
+		display: none;
+	}
+	.top-navbar-banner {
+		& .navbar-nav {
+			& .nav-link {
+				&.login-btn {
+					display: inline-block;
+					margin-top: 10px;
+				}
+			}
+		}
+	}
+	.navbar-toggler {
+		.navbar-toggler-icon {
+			filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(139deg) brightness(106%) contrast(101%);
+		}
+	}
+	.navbar-toggler:focus {
+		outline: 0;
+		box-shadow: none;
+	}
+	.banner-carousel h1 {
+		font-size: 26px;
+	}
+	.phone {
+		right: 50px;
+		width: 200px;
+		height: 333px;
+	}
+	.card2 {
+		position: absolute;
+		width: 120px;
+		height: 130px;
+		bottom: 82px;
+		right: 10px;
+	}
+	.card1 {
+		position: absolute;
+		width: 85px;
+		height: 124px;
+		top: 81px;
+		right: 190px;
+	}
+	.signal {
+		position: absolute;
+		top: -26px;
+		right: 30px;
+		width: 81px;
+		height: 88px;
+	}
+	.pin {
+		position: absolute;
+		top: -26px;
+		right: 93px;
+		width: 52px;
+		height: 134px;
+	}
+	.car {
+		position: absolute;
+		bottom: 49px;
+		width: 120px;
+		left: 0 !important;
+	}
+	.phone-circle {
+		position: absolute;
+		right: 82px;
+		top: 250px;
+		width: 30px;
+		height: 30px;
+	}
+	.banner-wrapper {
+		width: 350px;
+		margin: 0 auto;
+	}
+	.our-supports {
+		.support-card {
+			margin-bottom: 50px;
+			border: 1px solid #ededed;
+			padding: 50px;
+		}
+	}
+	.welcome-section {
+		.welcome-content {
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 999;
+			width: 100%;
+			height: auto;
+			top: 0;
+			padding: 0 50px;
+		}
+	}
+	.mobile-grapgh-image {
+		margin-top: 20px;
+		img {
+			width: 100%;
+		}
+	}
+	.total-counts {
+		padding-top: 50px;
+		h2 {
+			color: rgba(45, 60, 168, 1);
+			font-weight: 700;
+			font-size: 32px;
+			line-height: 32px;
+			letter-spacing: 0%;
+			margin-bottom: 10px;
+		}
+		h4 {
+			font-size: 24px;
+		}
+	}
+	.our-locations {
+		.map-wrapper {
+			width: 100%;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.contact-image {
+		.contact-mobile {
+			position: static;
+			width: 100%;
+		}
+	}
+	.welcome-section {
+		height: 615px;
+	}
+	.key-features-wrapper {
+		& .key-feature-content {
+			h3 {
+				font-size: 28px;
+			}
+			&.width-sm {
+				width: 100%;
+				padding: 20px;
+			}
+		}
+		.feature-list {
+			margin-bottom: 0px;
+			h6 {
+				font-size: 16px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.try-demo {
+		.btn-info {
+			padding: 12px 18px;
+		}
+	}
+	.contact-image {
+		& .contact-mobile {
+			.contact-icons {
+				position: absolute;
+				width: 200px;
+				left: 142px;
+				top: 0;
+				top: 100px;
+			}
+			& .contact-cards {
+				.card-1 {
+					width: 173px;
+					position: absolute;
+					left: 40px;
+					top: 0px;
+					z-index: 2;
+				}
+				.card-2 {
+					width: 137px;
+                    position: absolute;
+                    left: 5px;
+                    top: -26px;
+                    z-index: 2;
+				}
+			}
+			
+		}
+	}
+	.our-locations {
+		& .map-wrapper {
+			& .location-item {
+				padding: 5px;
+				p {
+					font-size: 10px;
+				}
+				h4 {
+					font-weight: 700;
+					font-size: 12px;
+					line-height: 18px;
+					margin-left: 0px;
+					margin-bottom: 0px;
+				}
+				&.dubai {
+					position: absolute;
+					top: 0px;
+					/* top: -100px; */
+					right: 0;
+					width: 100%;
+				}
+				&.kochi {
+					position: absolute;
+					top: 72px;
+					/* top: -100px; */
+					right: 0;
+					width: 100%;
+				}
+				&.kollam {
+					position: absolute;
+					top: 142px;
+					/* top: -100px; */
+					right: 0;
+					width: 100%;
+				}
+			}
+		}
+	}
+	.footer {
+		ul {
+			display: block;
+			margin: 0;
+			li {
+				a {
+					padding: 10px;
+					display: block;
+			}
+		}
+	}
+ }
