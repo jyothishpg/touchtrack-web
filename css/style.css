@@ -1297,5 +1297,8 @@ input::-ms-input-placeholder {
 		}
 	}
  }
-
- 
+}
+ path.path-pin {
+	transform: rotate(-180deg);
+	margin-top: -20px;
+ }
