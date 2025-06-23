@@ -364,6 +364,22 @@ body {
 
 .mobile-grapgh-image {
 	margin-top: 60px;
+	.graph-wrapper {
+		position: relative;
+		.mobile-only {
+			margin-top: 20px;
+		}
+		.graph {
+			position: absolute;
+			top: -25px;
+			left: -40px;
+		}
+		.pin-line {
+			position: absolute;            
+			top: 100px;
+            left: 150px;
+		}
+	}
 
 	img {
 		/* width: 100%; */
@@ -860,6 +876,10 @@ input::-ms-input-placeholder {
 		}
 	}
 }
+.svg-dim {
+	width:481px;
+	height:234px;
+}
 @media (max-width: 1280px) {
 	.car {
 		position: absolute;
@@ -917,6 +937,17 @@ input::-ms-input-placeholder {
 			}
 		}
 	}
+	.mobile-grapgh-image {
+		& .graph-wrapper {
+			.graph {
+				width: 263px;
+			}
+		}
+	}
+	.svg-dim {
+		width: 376px;
+		height: 234px;
+	}
  }
  @media (max-width: 999px) {
 	.login-btn {
@@ -973,10 +1004,49 @@ input::-ms-input-placeholder {
 		}
 	}
 	.mobile-grapgh-image {
-		margin-top: 15px;
+		margin-top: 20px;
+		img {
+			width: 100%;
+		}
+		.graph-wrapper {
+			.graph {
+				position: absolute;
+				top: -25px;
+				left: -20px;
+				width: 255px;
+			}
+			.svg-dim {
+				width: 445px;
+				height: auto;
+			}
+			.pin-line {
+				position: absolute;
+				top: 95px;
+                left: 102px;
+			}
+		}
+		
 	}
+	.key-features-wrapper {
+		.key-feature-content {
+			&.width-sm {
+				width: 90%;
+				margin: 0 auto;
+			}
+		}
+		.feature-list {
+			margin-bottom: 0px;
+		}
+	}
+	.contact-image {
+        & .contact-mobile {
+            .contact-icons {
+                left: 303px;
+            }
+        }
+    }
  }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 	.login-btn {
 		display: none;
 	}
@@ -1076,6 +1146,24 @@ input::-ms-input-placeholder {
 		img {
 			width: 100%;
 		}
+		.graph-wrapper {
+			.graph {
+				position: absolute;
+				top: -25px;
+				left: -40px;
+				width: 155px;
+			}
+			.svg-dim {
+				width: 165px;
+				height: auto;
+			}
+			.pin-line {
+				position: absolute;
+				top: 55px;
+				left: 39px;
+			}
+		}
+		
 	}
 	.total-counts {
 		padding-top: 50px;
@@ -1209,3 +1297,5 @@ input::-ms-input-placeholder {
 		}
 	}
  }
+
+ 
